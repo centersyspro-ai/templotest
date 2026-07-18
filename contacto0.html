@@ -1,0 +1,261 @@
+<!-- contacto.html - Página de contacto -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Contacto | Parroquia Santa María de la Paz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f7ff;
+            color: #1a2c3e;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .header {
+            background-color: #eef4fc;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #cde0f0;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2c6e9e;
+        }
+        .logo p {
+            font-size: 0.8rem;
+            color: #4a7c9c;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c5a7a;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1e88e5;
+            border-bottom: 2px solid #5dade2;
+        }
+        .section {
+            padding: 70px 0;
+            min-height: 70vh;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #2c6e9e;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #7abde0;
+            border-radius: 4px;
+        }
+        .contacto-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            background: white;
+            border-radius: 32px;
+            padding: 32px 36px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+            border: 1px solid #cde0f0;
+        }
+        .info-contacto {
+            flex: 1.2;
+        }
+        .info-contacto h3 {
+            font-size: 1.8rem;
+            margin-bottom: 18px;
+            color: #2c6e9e;
+        }
+        .contacto-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        .contacto-item i {
+            width: 38px;
+            font-size: 1.5rem;
+            color: #3a89c9;
+        }
+        .mapa-container {
+            flex: 1.5;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .mapa-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            display: block;
+            border: none;
+        }
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            z-index: 99;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: scale(1.05);
+        }
+        footer {
+            background: #e3eff9;
+            padding: 28px 0;
+            text-align: center;
+            color: #2c5a7a;
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+        @media (max-width: 860px) {
+            .contacto-grid {
+                flex-direction: column;
+                padding: 24px;
+            }
+            .mapa-container iframe {
+                min-height: 320px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .btn-whatsapp {
+                width: 52px;
+                height: 52px;
+                font-size: 1.8rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .mapa-container iframe {
+                min-height: 260px;
+            }
+            .contacto-item {
+                font-size: 0.95rem;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container header-content">
+        <div class="logo">
+            <h1>Santa María de la Paz</h1>
+            <p>Comunidad de fe · Villa Esperanza</p>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="cursos.html">Curso Bíblico</a>
+            <a href="contacto.html" class="active">Contacto</a>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Presencia y comunicación</h2>
+            <div class="contacto-grid">
+                <div class="info-contacto">
+                    <h3><i class="fas fa-place-of-worship"></i> Iglesia Santa María de la Paz</h3>
+                    <div class="contacto-item">
+                        <i class="fas fa-map-pin"></i>
+                        <span><strong>Dirección:</strong> Av. Libertad 450, Villa Esperanza (CP 2300), Córdoba, Argentina.</span>
+                    </div>
+                    <div class="contacto-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span><strong>Teléfono fijo:</strong> +54 3543 42-5890</span>
+                    </div>
+                    <div class="contacto-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><strong>Correo electrónico oficial:</strong> contacto@santamariapaz.org</span>
+                    </div>
+                    <div class="contacto-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span><strong>WhatsApp pastoral:</strong> +54 9 4613 444540 (solo mensajes)</span>
+                    </div>
+                    <div class="contacto-item">
+                        <i class="far fa-clock"></i>
+                        <span><strong>Atención secretaría:</strong> Lunes a viernes de 9 a 12 y de 17 a 19:30 hs.</span>
+                    </div>
+                    <div class="contacto-item">
+                        <i class="fas fa-church"></i>
+                        <span><strong>Zona de referencia:</strong> Entre calles Jujuy y Mendoza, frente al jardín "Luz de María".</span>
+                    </div>
+                </div>
+                <!--
+                <div class="mapa-container">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3736.593738112113!2d-100.841329!3d20.522873999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDMxJzIyLjQiTiAxMDDCsDUwJzI4LjgiVw!5e0!3m2!1ses!2smx!4v1778465657943!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                 -->
+            </div>
+        </div>
+        <div class="mapa-container">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3736.5942619398393!2d-100.8428507465852!3d20.52285254297697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDMxJzIyLjMiTiAxMDDCsDUwJzI3LjciVw!5e0!3m2!1ses!2smx!4v1778466262006!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="container">
+        <p>© 2025 Parroquia Santa María de la Paz · Villa Esperanza · Comunícate con confianza.</p>
+        <p><i class="fas fa-heart" style="color:#3a89c9;"></i> "La paz del Señor sea siempre con ustedes"</p>
+    </div>
+</footer>
+<a href="https://wa.me/5494613444540?text=Hola%2C%20me%20comunico%20desde%20la%20p%C3%A1gina%20web%20para%20consultar%20informaci%C3%B3n%20de%20la%20iglesia." class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!-- cursos.html - Página del curso -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Curso de Religión | Parroquia Santa María de la Paz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f7ff;
+            color: #1a2c3e;
+            line-height: 1.5;
+        }
+        h1, h2, h3, .logo, .curso-titulo {
+            font-family: 'Playfair Display', serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .header {
+            background-color: #eef4fc;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #cde0f0;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2c6e9e;
+        }
+        .logo p {
+            font-size: 0.8rem;
+            color: #4a7c9c;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c5a7a;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1e88e5;
+            border-bottom: 2px solid #5dade2;
+        }
+        .section {
+            padding: 70px 0;
+            min-height: 70vh;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #2c6e9e;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #7abde0;
+            border-radius: 4px;
+        }
+        .curso-wrapper {
+            background: #ffffff;
+            border-radius: 40px;
+            padding: 28px 32px;
+            border: 1px solid #cde0f0;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .curso-titulo-principal {
+            font-size: 2rem;
+            color: #2c6e9e;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .curso-sub {
+            font-size: 1rem;
+            color: #3a7ca5;
+            margin-bottom: 28px;
+            border-left: 3px solid #7abde0;
+            padding-left: 16px;
+        }
+        .avance-semana {
+            background: #f4fafd;
+            border-radius: 32px;
+            padding: 24px;
+            margin-top: 20px;
+        }
+        .week-badge {
+            display: inline-block;
+            background: #7abde0;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-weight: bold;
+            color: #1a3a4e;
+            margin-bottom: 20px;
+        }
+        .progreso-barra {
+            background: #d4e4f0;
+            border-radius: 40px;
+            height: 14px;
+            width: 100%;
+            margin: 20px 0 12px;
+            overflow: hidden;
+        }
+        .progreso-lleno {
+            background: #2c6e9e;
+            width: 68%;
+            height: 100%;
+            border-radius: 40px;
+        }
+        .detalle-semana {
+            display: flex;
+            justify-content: space-between;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+        .tema-semana {
+            margin-top: 20px;
+            background: #eef4fc;
+            padding: 18px;
+            border-radius: 28px;
+        }
+        .horario-misa {
+            background: #e3f0fa;
+            padding: 6px 12px;
+            border-radius: 40px;
+            display: inline-block;
+            color: #1e6eb0;
+        }
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            z-index: 99;
+            text-decoration: none;
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: scale(1.05);
+        }
+        footer {
+            background: #e3eff9;
+            padding: 28px 0;
+            text-align: center;
+            color: #2c5a7a;
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+        @media (max-width: 760px) {
+            .section-title { font-size: 1.8rem; }
+            .curso-wrapper { padding: 20px; }
+            .btn-whatsapp { width: 52px; height: 52px; font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container header-content">
+        <div class="logo">
+            <h1>Santa María de la Paz</h1>
+            <p>Comunidad de fe · Villa Esperanza</p>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="cursos.html" class="active">Curso Bíblico</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Formación en la fe</h2>
+            <div class="curso-wrapper">
+                <div>
+                    <span class="week-badge"><i class="fas fa-book-open"></i> Curso activo</span>
+                    <h3 class="curso-titulo-principal">“Raíces de la Esperanza”</h3>
+                    <div class="curso-sub">Curso de introducción a la teología y espiritualidad católica · 8 semanas</div>
+                </div>
+                <div class="avance-semana">
+                    <div class="detalle-semana">
+                        <span><i class="fas fa-chalkboard-user"></i> <strong>Semana actual:</strong> Semana 1 de 8</span>
+                        <span><i class="fas fa-users"></i> Facilitador: Diácono Ramón Flores</span>
+                    </div>
+                    <div class="progreso-barra">
+                        <div class="progreso-lleno" style="width: 10%;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #4a7c9c;">
+                        <span>🔰 Inicio: 7 de marzo</span>
+                        <span>🎯 Finalización: 25 de abril</span>
+                    </div>
+                    <div class="tema-semana">
+                        <h4><i class="fas fa-leaf"></i> Avance de esta semana (Semana 5): “Los sacramentos: signos de la gracia”</h4>
+                        <p style="margin-top: 10px;">📖 Temario abordado: Bautismo y Confirmación, su origen en las Escrituras. Participación del 82% de los inscritos. Próxima reunión: jueves 10 de abril a las 19:00hs en el salón parroquial. Lectura complementaria: Catecismo 1210-1284.</p>
+                        <div style="margin-top: 12px; background: #e3f0fa; border-radius: 32px; padding: 8px 14px; font-size: 0.85rem;">
+                            <i class="fas fa-check-circle"></i> Tareas entregadas: 24 de 30 participantes | Próximo encuentro con exposición de trabajos grupales.
+                        </div>
+                    </div>
+                    <div style="margin-top: 18px; border-top: 1px dashed #cde0f0; padding-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center;">
+                        <span><i class="far fa-calendar-check"></i> <strong>Próximo módulo:</strong> La Eucaristía, centro de la vida cristiana</span>
+                        <span class="horario-misa"><i class="fas fa-video"></i> Modalidad presencial y vía Zoom</span>
+                    </div>
+                </div>
+                <p style="margin-top: 12px; font-size: 0.9rem; font-style: italic; color: #3a7ca5;"><i class="fas fa-info-circle"></i> ¡Aún puedes inscribirte! Comunícate por Whatsapp para unirte a los cursos de LA GRAN MISION.</p>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="container">
+        <p>© 2025 Parroquia Santa María de la Paz · Villa Esperanza · Curso de formación permanente.</p>
+        <p><i class="fas fa-heart" style="color:#3a89c9;"></i> "Crece en la gracia y el conocimiento de nuestro Señor" (2 Pedro 3:18)</p>
+    </div>
+</footer>
+<a href="https://wa.me/524613444540?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20el%20curso." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+</a>
+</body>
+</html>
